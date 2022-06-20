@@ -20,9 +20,16 @@ $containermargin: 0 10%;
   margin: 0 10%;
 }
 
+.btn.btn-request {
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: linear-gradient(to right, $lime-green, $bright-cyan);
+  color: $white;
+}
+
 header {
   padding: 20px 0;
-  display: fixed;
+  z-index: 3;
 
   .heading {
     display: flex;
@@ -46,6 +53,24 @@ header {
   }
 }
 
+section#home {
+  background-color: $very-light-gray;
+
+  .intro {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .intro-text {
+      padding-top: 5rem;
+    }
+
+    .intro-img img {
+      max-width: 200%;
+      margin-top: -50px;
+      z-index: 1;
+    }
+  }
+}
 .attribution {
   font-size: 11px;
   text-align: center;

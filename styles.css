@@ -9,9 +9,16 @@
   margin: 0 10%;
 }
 
+.btn.btn-request {
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  color: hsl(0deg, 0%, 100%);
+}
+
 header {
   padding: 20px 0;
-  display: fixed;
+  z-index: 3;
 }
 header .heading {
   display: flex;
@@ -29,6 +36,22 @@ header .heading ul li {
 header .heading ul li a {
   text-decoration: none;
   color: hsl(233deg, 8%, 62%);
+}
+
+section#home {
+  background-color: hsl(0deg, 0%, 98%);
+}
+section#home .intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+section#home .intro .intro-text {
+  padding-top: 5rem;
+}
+section#home .intro .intro-img img {
+  max-width: 200%;
+  margin-top: -50px;
+  z-index: 1;
 }
 
 .attribution {
