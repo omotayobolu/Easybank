@@ -1,0 +1,41 @@
+* {
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 10%;
+}
+
+header {
+  padding: 20px 0;
+  display: fixed;
+}
+header .heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Public Sans", sans-serif;
+}
+header .heading ul {
+  display: flex;
+  list-style-type: none;
+}
+header .heading ul li {
+  margin: 0 10px;
+}
+header .heading ul li a {
+  text-decoration: none;
+  color: hsl(233deg, 8%, 62%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}/*# sourceMappingURL=styles.css.map */

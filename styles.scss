@@ -1,0 +1,55 @@
+$dark-blue: hsl(233, 26%, 24%);
+$lime-green: hsl(136, 65%, 51%);
+$bright-cyan: hsl(192, 70%, 51%);
+$grayish-blue: hsl(233, 8%, 62%);
+$light-grayish-blue: hsl(220, 16%, 96%);
+$very-light-gray: hsl(0, 0%, 98%);
+$white: hsl(0, 0%, 100%);
+$font-family: "Public Sans", sans-serif;
+$nodecoration: none;
+$containermargin: 0 10%;
+
+* {
+  border: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 10%;
+}
+
+header {
+  padding: 20px 0;
+  display: fixed;
+
+  .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: $font-family;
+
+    ul {
+      display: flex;
+      list-style-type: none;
+
+      li {
+        margin: 0 10px;
+
+        a {
+          text-decoration: $nodecoration;
+          color: $grayish-blue;
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
