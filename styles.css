@@ -5,26 +5,56 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  font-family: "Public Sans", sans-serif;
+  font-size: 18px;
+}
+
 .container {
   margin: 0 10%;
 }
 
-.btn.btn-request {
+h1,
+h2,
+h3 {
+  color: hsl(233deg, 26%, 24%);
+}
+
+h2 {
+  font-weight: 400;
+}
+
+h3 {
+  padding: 1.5rem 0;
+  font-weight: 400;
+}
+
+p {
+  color: hsl(233deg, 8%, 62%);
+  line-height: 1.5;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+.btn {
   padding: 10px 30px;
   border-radius: 20px;
-  background-color: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
+  background: linear-gradient(to right, hsl(136deg, 65%, 51%), hsl(192deg, 70%, 51%));
   color: hsl(0deg, 0%, 100%);
 }
 
 header {
   padding: 20px 0;
-  z-index: 3;
+  z-index: 10;
+  position: fixed;
+  width: 100%;
+  background-color: hsl(0deg, 0%, 100%);
 }
 header .heading {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-family: "Public Sans", sans-serif;
 }
 header .heading ul {
   display: flex;
@@ -40,18 +70,68 @@ header .heading ul li a {
 
 section#home {
   background-color: hsl(0deg, 0%, 98%);
+  position: relative;
+  overflow-x: hidden;
 }
 section#home .intro {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 section#home .intro .intro-text {
+  padding-top: 8rem;
+  padding-right: 1rem;
+}
+section#home .intro .intro-text h1 {
+  font-family: "Public Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
   padding-top: 5rem;
 }
+section#home .intro .intro-text p {
+  padding: 20px 0;
+  padding-right: 2.5rem;
+}
+section#home .intro .intro-img {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: visible;
+}
 section#home .intro .intro-img img {
-  max-width: 200%;
-  margin-top: -50px;
-  z-index: 1;
+  max-width: 150%;
+  padding-top: -1.5rem;
+  padding-left: 5rem;
+  z-index: -1;
+  background-image: url(./images/bg-intro-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left bottom;
+  overflow-x: visible;
+}
+
+section#about {
+  padding: 5rem 0;
+  background-color: hsl(220deg, 16%, 96%);
+}
+section#about .about-text {
+  padding-bottom: 2rem;
+  width: 50%;
+}
+section#about .about-text p {
+  padding: 1rem 0;
+}
+section#about .boxes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+section#about .boxes .box {
+  width: 100%;
+}
+section#about .boxes .box img {
+  max-width: 100%;
+}
+section#about .boxes .box p {
+  font-size: 0.85rem;
 }
 
 .attribution {
