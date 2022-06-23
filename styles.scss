@@ -38,8 +38,8 @@ h6 {
 }
 
 h1 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 3rem;
+  font-weight: 400;
   padding-top: 5rem;
 }
 
@@ -70,12 +70,22 @@ p {
   font-weight: 300;
 }
 
+a {
+  text-decoration: $nodecoration;
+}
+
+ul {
+  list-style-type: none;
+}
+
 .btn {
   padding: 10px 30px;
   border-radius: 20px;
   background: linear-gradient(to right, $lime-green, $bright-cyan);
   color: $white;
   cursor: pointer;
+  font-weight: 700;
+  font-size: 0.8rem;
 }
 
 // Header
@@ -93,13 +103,11 @@ header {
 
     ul {
       display: flex;
-      list-style-type: none;
 
       li {
         margin: 0 10px;
 
         a {
-          text-decoration: $nodecoration;
           color: $grayish-blue;
         }
       }
@@ -221,6 +229,49 @@ section#blog {
           padding: 1rem 0;
           font-size: 0.8rem;
         }
+      }
+    }
+  }
+}
+
+// Footer
+footer {
+  background-color: $dark-blue;
+
+  .footer-contents {
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    li {
+      margin: 15px 0;
+    }
+
+    a {
+      color: $light-grayish-blue;
+      font-weight: 300;
+      font-size: 0.9rem;
+    }
+
+    .content-1 {
+      .logo {
+        filter: invert(2) brightness(2);
+        padding-bottom: 2rem;
+      }
+
+      .socials {
+        letter-spacing: 5px;
+      }
+    }
+
+    .content-4 {
+      .btn {
+        margin-left: 5rem;
+      }
+
+      .copyright {
+        margin-top: 2rem;
       }
     }
   }
