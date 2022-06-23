@@ -15,6 +15,11 @@ body {
 .container {
   margin: 0 10%;
 }
+@media (min-width: 360px) and (max-width: 768px) {
+  .container {
+    margin: 0 5%;
+  }
+}
 
 h1,
 h2,
@@ -28,7 +33,6 @@ h6 {
 h1 {
   font-size: 3rem;
   font-weight: 400;
-  padding-top: 5rem;
 }
 
 h2 {
@@ -75,6 +79,14 @@ ul {
   font-weight: 700;
   font-size: 0.8rem;
 }
+.btn:hover {
+  opacity: 0.6;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  .btn {
+    display: none;
+  }
+}
 
 header {
   padding: 20px 0;
@@ -91,48 +103,117 @@ header .heading {
 header .heading ul {
   display: flex;
 }
-header .heading ul li {
+header .heading ul .nav-item {
   margin: 0 10px;
 }
-header .heading ul li a {
+@media (min-width: 360px) and (max-width: 768px) {
+  header .heading ul .nav-item {
+    display: none;
+  }
+}
+header .heading ul .nav-item .nav-link {
   color: hsl(233deg, 8%, 62%);
+  font-size: 0.9rem;
+}
+header .heading ul .nav-item .nav-link:hover {
+  color: hsl(233deg, 26%, 24%);
+  border-bottom: 3px solid hsl(136deg, 65%, 51%);
+}
+header .heading .toggle {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 5%;
+  width: 30px;
+  height: 30px;
+  background-image: url(./images/icon-hamburger.svg);
+  background-repeat: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 30px;
+  cursor: pointer;
+  z-index: 10;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  header .heading .toggle {
+    display: block;
+  }
+}
+header .heading .toggle.active {
+  background: url(./images/icon-close.svg);
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center;
 }
 
 section#home {
   background-color: hsl(0deg, 0%, 98%);
   position: relative;
-  overflow-x: hidden;
 }
 section#home .intro {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
+@media (min-width: 360px) and (max-width: 768px) {
+  section#home .intro {
+    grid-template-columns: 1fr;
+    padding-bottom: 2rem;
+  }
+}
 section#home .intro .intro-text {
-  padding-top: 8rem;
-  padding-right: 1rem;
+  padding: 8rem 1rem 0 0;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  section#home .intro .intro-text {
+    padding: 0 0 0 0;
+    text-align: center;
+  }
 }
 section#home .intro .intro-text h1 {
   padding-top: 5rem;
 }
+@media (min-width: 360px) and (max-width: 768px) {
+  section#home .intro .intro-text h1 {
+    padding-top: 1rem;
+    font-size: 2.2rem;
+  }
+}
 section#home .intro .intro-text p {
-  padding: 20px 0;
-  padding-right: 2.5rem;
+  padding: 20px 2.5rem 0 0;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  section#home .intro .intro-text p {
+    padding-right: 0;
+  }
 }
 section#home .intro .intro-img {
   width: 100%;
   max-width: 100%;
   overflow-x: visible;
-}
-section#home .intro .intro-img img {
-  max-width: 150%;
-  padding-top: -1.5rem;
-  padding-left: 5rem;
-  z-index: -1;
   background-image: url(./images/bg-intro-desktop.svg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: left bottom;
-  overflow-x: visible;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  section#home .intro .intro-img {
+    grid-row: 1;
+    background-image: url(./images/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: center;
+    background-position: center center;
+  }
+}
+section#home .intro .intro-img img {
+  max-width: 150%;
+  padding: -1.5rem 0 0 5rem;
+  z-index: -1;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  section#home .intro .intro-img img {
+    margin-top: -2rem;
+    max-width: 100%;
+  }
 }
 
 section#about {
@@ -191,6 +272,9 @@ section#blog .articles .article .article-text h6 {
 section#blog .articles .article .article-text h4 {
   font-size: 1rem;
 }
+section#blog .articles .article .article-text h4:hover {
+  color: hsl(136deg, 65%, 51%);
+}
 section#blog .articles .article .article-text p {
   padding: 1rem 0;
   font-size: 0.8rem;
@@ -213,12 +297,23 @@ footer .footer-contents a {
   font-weight: 300;
   font-size: 0.9rem;
 }
+footer .footer-contents a:hover {
+  color: hsl(136deg, 65%, 51%);
+}
 footer .footer-contents .content-1 .logo {
   filter: invert(2) brightness(2);
   padding-bottom: 2rem;
 }
 footer .footer-contents .content-1 .socials {
   letter-spacing: 5px;
+}
+footer .footer-contents .content-1 .socials img {
+  background: none;
+  cursor: pointer;
+}
+footer .footer-contents .content-1 .socials img:hover {
+  color: hsl(136deg, 65%, 51%);
+  background: hsl(136deg, 65%, 51%);
 }
 footer .footer-contents .content-4 .btn {
   margin-left: 5rem;

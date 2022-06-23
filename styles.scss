@@ -7,8 +7,18 @@ $very-light-gray: hsl(0, 0%, 98%);
 $white: hsl(0, 0%, 100%);
 $font-family: "Public Sans", sans-serif;
 $nodecoration: none;
-$containermargin: 0 10%;
 $headercolor: $dark-blue;
+$gradient: linear-gradient(to right, $lime-green, $bright-cyan);
+$breakpoints: (
+  "md": 768px,
+  "sm": 360px,
+);
+
+@mixin mobile {
+  @media (min-width: map-get($breakpoints, "sm")) and (max-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
 
 * {
   border: none;
@@ -26,6 +36,10 @@ body {
 
 .container {
   margin: 0 10%;
+
+  @include mobile {
+    margin: 0 5%;
+  }
 }
 
 h1,
@@ -40,7 +54,6 @@ h6 {
 h1 {
   font-size: 3rem;
   font-weight: 400;
-  padding-top: 5rem;
 }
 
 h2 {
@@ -81,11 +94,19 @@ ul {
 .btn {
   padding: 10px 30px;
   border-radius: 20px;
-  background: linear-gradient(to right, $lime-green, $bright-cyan);
+  background: $gradient;
   color: $white;
   cursor: pointer;
   font-weight: 700;
   font-size: 0.8rem;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  @include mobile {
+    display: none;
+  }
 }
 
 // Header
@@ -104,13 +125,49 @@ header {
     ul {
       display: flex;
 
-      li {
+      .nav-item {
         margin: 0 10px;
 
-        a {
+        @include mobile {
+          display: none;
+        }
+
+        .nav-link {
           color: $grayish-blue;
+          font-size: 0.9rem;
+
+          &:hover {
+            color: $dark-blue;
+            border-bottom: 3px solid $lime-green;
+          }
         }
       }
+    }
+    .toggle {
+      display: none;
+      position: absolute;
+      top: 15px;
+      right: 5%;
+      width: 30px;
+      height: 30px;
+      background-image: url(./images/icon-hamburger.svg);
+      background-repeat: none;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 30px;
+      cursor: pointer;
+      z-index: 10;
+
+      @include mobile {
+        display: block;
+      }
+    }
+
+    .toggle.active {
+      background: url(./images/icon-close.svg);
+      background-repeat: no-repeat;
+      background-size: 30px;
+      background-position: center;
     }
   }
 }
@@ -119,40 +176,67 @@ header {
 section#home {
   background-color: $very-light-gray;
   position: relative;
-  overflow-x: hidden;
 
   .intro {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
 
+    @include mobile {
+      grid-template-columns: 1fr;
+      padding-bottom: 2rem;
+    }
+
     .intro-text {
-      padding-top: 8rem;
-      padding-right: 1rem;
+      padding: 8rem 1rem 0 0;
+
+      @include mobile {
+        padding: 0 0 0 0;
+        text-align: center;
+      }
 
       h1 {
         padding-top: 5rem;
+
+        @include mobile {
+          padding-top: 1rem;
+          font-size: 2.2rem;
+        }
       }
 
       p {
-        padding: 20px 0;
-        padding-right: 2.5rem;
+        padding: 20px 2.5rem 0 0;
+
+        @include mobile {
+          padding-right: 0;
+        }
       }
     }
     .intro-img {
       width: 100%;
       max-width: 100%;
       overflow-x: visible;
+      background-image: url(./images/bg-intro-desktop.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left bottom;
+
+      @include mobile {
+        grid-row: 1;
+        background-image: url(./images/bg-intro-mobile.svg);
+        background-repeat: no-repeat;
+        background-size: center;
+        background-position: center center;
+      }
 
       img {
         max-width: 150%;
-        padding-top: -1.5rem;
-        padding-left: 5rem;
+        padding: -1.5rem 0 0 5rem;
         z-index: -1;
-        background-image: url(./images/bg-intro-desktop.svg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: left bottom;
-        overflow-x: visible;
+
+        @include mobile {
+          margin-top: -2rem;
+          max-width: 100%;
+        }
       }
     }
   }
@@ -223,6 +307,10 @@ section#blog {
 
         h4 {
           font-size: 1rem;
+
+          &:hover {
+            color: $lime-green;
+          }
         }
 
         p {
@@ -252,6 +340,10 @@ footer {
       color: $light-grayish-blue;
       font-weight: 300;
       font-size: 0.9rem;
+
+      &:hover {
+        color: $lime-green;
+      }
     }
 
     .content-1 {
@@ -262,6 +354,16 @@ footer {
 
       .socials {
         letter-spacing: 5px;
+
+        img {
+          background: none;
+          cursor: pointer;
+
+          &:hover {
+            color: $lime-green;
+            background: $lime-green;
+          }
+        }
       }
     }
 
