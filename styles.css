@@ -92,7 +92,7 @@ ul {
 
 header {
   padding: 20px 0;
-  z-index: 10;
+  z-index: 30;
   position: fixed;
   width: 100%;
   background-color: hsl(0deg, 0%, 100%);
@@ -126,8 +126,8 @@ header .heading .toggle {
   position: absolute;
   top: 15px;
   right: 5%;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   background-image: url(./images/icon-hamburger.svg);
   background-repeat: no-repeat;
   background-position: center;
@@ -154,8 +154,20 @@ header .heading .toggle.active {
 }
 
 section#home {
-  background-color: hsl(0deg, 0%, 98%);
   position: relative;
+  background-color: hsl(0deg, 0%, 98%);
+  background-image: url(./images/bg-intro-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 900px 1000px;
+  background-position: 130% bottom;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  section#home {
+    background-image: url(./images/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 500px 450px;
+    background-position: center top;
+  }
 }
 section#home .intro {
   display: flex;
@@ -169,12 +181,8 @@ section#home .intro {
     padding-bottom: 2rem;
   }
 }
-section#home .intro .intro-text {
-  padding: 0rem 0rem 0 0;
-}
 @media (min-width: 360px) and (max-width: 768px) {
   section#home .intro .intro-text {
-    padding: 0 0 0 0;
     text-align: center;
     order: 2;
   }
@@ -203,13 +211,10 @@ section#home .intro .intro-img {
   }
 }
 section#home .intro .intro-img img {
+  position: relative;
   max-width: 130%;
   margin: -3rem 0 0 5rem;
-  z-index: 10;
-  background-image: url(./images/bg-intro-desktop.svg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+  z-index: 25;
 }
 @media (min-width: 360px) and (max-width: 768px) {
   section#home .intro .intro-img img {
@@ -217,16 +222,20 @@ section#home .intro .intro-img img {
     order: 1;
     margin-top: -5rem;
     max-width: 100%;
-    background-image: url(./images/bg-intro-mobile.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center center;
   }
 }
 
 section#about {
+  position: relative;
+  margin-top: -4rem;
+  z-index: 20;
   padding: 5rem 0;
   background-color: hsl(220deg, 16%, 96%);
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  section#about {
+    margin-top: 0;
+  }
 }
 section#about .about-text {
   padding-bottom: 2rem;
@@ -262,6 +271,7 @@ section#about .boxes .box {
 @media (min-width: 360px) and (max-width: 768px) {
   section#about .boxes .box {
     text-align: center;
+    padding: 0.5rem;
   }
 }
 section#about .boxes .box img {
@@ -273,6 +283,7 @@ section#about .boxes .box p {
 @media (min-width: 360px) and (max-width: 768px) {
   section#about .boxes .box p {
     text-align: center;
+    font-size: 0.9rem;
   }
 }
 
@@ -320,6 +331,7 @@ section#blog .articles .article .article-text h6 {
 }
 section#blog .articles .article .article-text h4 {
   font-size: 1rem;
+  cursor: pointer;
 }
 section#blog .articles .article .article-text h4:hover {
   color: hsl(136deg, 65%, 51%);
@@ -331,7 +343,7 @@ section#blog .articles .article .article-text h4:hover {
 }
 section#blog .articles .article .article-text p {
   padding: 1rem 0;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 @media (min-width: 360px) and (max-width: 768px) {
   section#blog .articles .article .article-text p {
@@ -366,7 +378,7 @@ footer .footer-contents a:hover {
   color: hsl(136deg, 65%, 51%);
 }
 footer .footer-contents .content-1 .logo {
-  filter: invert(2) brightness(2);
+  filter: invert(2) opacity(1) brightness(2);
   padding-bottom: 2rem;
 }
 footer .footer-contents .content-1 .socials {
@@ -382,8 +394,8 @@ footer .footer-contents .content-1 .socials img {
   cursor: pointer;
 }
 footer .footer-contents .content-1 .socials img:hover {
-  color: hsl(136deg, 65%, 51%);
-  background: hsl(136deg, 65%, 51%);
+  opacity: 0.5;
+  filter: alpha(opacity=50);
 }
 @media (min-width: 360px) and (max-width: 768px) {
   footer .footer-contents .content-3 {
@@ -411,9 +423,9 @@ footer .footer-contents .content-4 .copyright {
   display: none;
   position: absolute;
   top: 4rem;
-  height: 30vh;
+  height: 40vh;
   width: 100%;
-  z-index: 3;
+  z-index: 29;
 }
 @media (min-width: 360px) and (max-width: 768px) {
   .modal.active {

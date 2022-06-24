@@ -14,6 +14,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -86,7 +87,7 @@
           </p>
         </div>
         <div class="boxes">
-          <div class="box">
+          <div class="box" data-aos="fade-up">
             <img src="./images/icon-online.svg" alt="" />
             <h3>Online Banking</h3>
             <p>
@@ -94,7 +95,7 @@
               your finances wherever you are in the world.
             </p>
           </div>
-          <div class="box">
+          <div class="box" data-aos="fade-up">
             <img src="./images/icon-budgeting.svg" alt="" />
             <h3>Simple Budgeting</h3>
             <p>
@@ -102,7 +103,7 @@
               notifications when you're close to hitting your limits.
             </p>
           </div>
-          <div class="box">
+          <div class="box" data-aos="fade-up">
             <img src="./images/icon-onboarding.svg" alt="" />
             <h3>Fast Onboarding</h3>
             <p>
@@ -110,7 +111,7 @@
               start taking control of your finances right away.
             </p>
           </div>
-          <div class="box">
+          <div class="box" data-aos="fade-up">
             <img src="./images/icon-api.svg" alt="" />
             <h3>Open API</h3>
             <p>
@@ -128,7 +129,7 @@
         <h2>Latest Articles</h2>
         <div class="articles">
           <!-- Article 1 -->
-          <div class="article">
+          <div class="article" data-aos="fade-up">
             <img src="./images/image-currency.jpg" alt="" />
             <div class="article-text">
               <h6>By Claire Robinson</h6>
@@ -141,7 +142,7 @@
           </div>
 
           <!-- Article 2 -->
-          <div class="article">
+          <div class="article" data-aos="fade-up">
             <img src="./images/image-restaurant.jpg" alt="" />
             <div class="article-text">
               <h6>By Wilson Hutton</h6>
@@ -154,7 +155,7 @@
           </div>
 
           <!-- Article 3 -->
-          <div class="article">
+          <div class="article" data-aos="fade-up">
             <img src="./images/image-plane.jpg" alt="" />
             <div class="article-text">
               <h6>By Wilson Hutton</h6>
@@ -167,7 +168,7 @@
           </div>
 
           <!-- Article 4 -->
-          <div class="article">
+          <div class="article" data-aos="fade-up">
             <img src="./images/image-confetti.jpg" alt="" />
             <div class="article-text">
               <h6>By Claire Robinson</h6>
@@ -227,10 +228,10 @@
       <div class="container">
         <div class="modal-body">
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">Blog</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#footer">Contact</a></li>
+            <li><a href="#blog">Blog</a></li>
             <li><a href="#">Careers</a></li>
           </ul>
         </div>
@@ -251,7 +252,6 @@
         duration: 500,
       });
     </script>
-
     <script src="script.js"></script>
   </body>
 </html>
