@@ -32,6 +32,7 @@ body {
   font-family: $font-family;
   font-size: 18px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .container {
@@ -49,6 +50,7 @@ h4,
 h5,
 h6 {
   color: $headercolor;
+  overflow: hidden;
 }
 
 h1 {
@@ -104,8 +106,10 @@ ul {
     opacity: 0.6;
   }
 
-  @include mobile {
-    display: none;
+  &.btn-header {
+    @include mobile {
+      display: none;
+    }
   }
 }
 
@@ -178,25 +182,26 @@ section#home {
   position: relative;
 
   .intro {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 
     @include mobile {
-      grid-template-columns: 1fr;
+      flex-direction: column;
       padding-bottom: 2rem;
     }
 
     .intro-text {
-      padding: 8rem 1rem 0 0;
+      padding: 0rem 0rem 0 0;
 
       @include mobile {
         padding: 0 0 0 0;
         text-align: center;
+        order: 2;
       }
 
       h1 {
-        padding-top: 5rem;
-
         @include mobile {
           padding-top: 1rem;
           font-size: 2.2rem;
@@ -204,7 +209,7 @@ section#home {
       }
 
       p {
-        padding: 20px 2.5rem 0 0;
+        padding: 1rem 2.5rem 2rem 0;
 
         @include mobile {
           padding-right: 0;
@@ -214,28 +219,29 @@ section#home {
     .intro-img {
       width: 100%;
       max-width: 100%;
-      overflow-x: visible;
-      background-image: url(./images/bg-intro-desktop.svg);
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: left bottom;
 
       @include mobile {
-        grid-row: 1;
-        background-image: url(./images/bg-intro-mobile.svg);
-        background-repeat: no-repeat;
-        background-size: center;
-        background-position: center center;
+        order: 1;
       }
 
       img {
-        max-width: 150%;
-        padding: -1.5rem 0 0 5rem;
-        z-index: -1;
+        max-width: 130%;
+        margin: -3rem 0 0 5rem;
+        z-index: 10;
+        background-image: url(./images/bg-intro-desktop.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
 
         @include mobile {
+          margin: 0;
+          order: 1;
           margin-top: -2rem;
           max-width: 100%;
+          background-image: url(./images/bg-intro-mobile.svg);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center center;
         }
       }
     }
@@ -251,6 +257,17 @@ section#about {
     padding-bottom: 2rem;
     width: 50%;
 
+    h2 {
+      @include mobile {
+        font-size: 2rem;
+      }
+    }
+
+    @include mobile {
+      width: 100%;
+      text-align: center;
+    }
+
     p {
       padding: 1rem 0;
     }
@@ -261,15 +278,27 @@ section#about {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+
     .box {
       width: 100%;
+
+      @include mobile {
+        text-align: center;
+      }
 
       img {
         max-width: 100%;
       }
 
       p {
-        font-size: 0.85rem;
+        font-size: 0.9rem;
+
+        @include mobile {
+          text-align: center;
+        }
       }
     }
   }
@@ -286,6 +315,10 @@ section#blog {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
 
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+
     .article {
       background-color: $white;
       border-radius: 5px;
@@ -295,11 +328,19 @@ section#blog {
         height: 200px;
         border-top-left-radius: 5px;
         border-top-right-radius: 5px;
+
+        @include mobile {
+          width: 100%;
+        }
       }
 
       .article-text {
         padding: 1rem;
         padding-bottom: 0;
+
+        @include mobile {
+          padding: 1.2rem;
+        }
 
         h6 {
           padding: 1rem 0;
@@ -311,11 +352,19 @@ section#blog {
           &:hover {
             color: $lime-green;
           }
+
+          @include mobile {
+            font-size: 1.1rem;
+          }
         }
 
         p {
           padding: 1rem 0;
           font-size: 0.8rem;
+
+          @include mobile {
+            font-size: 0.9rem;
+          }
         }
       }
     }
@@ -331,6 +380,11 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-align: center;
+
+    @include mobile {
+      flex-direction: column;
+    }
 
     li {
       margin: 15px 0;
@@ -353,7 +407,11 @@ footer {
       }
 
       .socials {
-        letter-spacing: 5px;
+        letter-spacing: 7px;
+
+        @include mobile {
+          padding-bottom: 1rem;
+        }
 
         img {
           background: none;
@@ -367,13 +425,27 @@ footer {
       }
     }
 
+    .content-3 {
+      @include mobile {
+        margin-top: -1rem;
+      }
+    }
+
     .content-4 {
       .btn {
         margin-left: 5rem;
+
+        @include mobile {
+          margin: 1rem 0 0 0;
+        }
       }
 
       .copyright {
         margin-top: 2rem;
+
+        @include mobile {
+          margin-top: 1rem;
+        }
       }
     }
   }
