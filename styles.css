@@ -129,7 +129,7 @@ header .heading .toggle {
   width: 30px;
   height: 30px;
   background-image: url(./images/icon-hamburger.svg);
-  background-repeat: none;
+  background-repeat: no-repeat;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 30px;
@@ -146,6 +146,11 @@ header .heading .toggle.active {
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: center;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  header .heading .toggle.active {
+    display: block;
+  }
 }
 
 section#home {
@@ -210,7 +215,7 @@ section#home .intro .intro-img img {
   section#home .intro .intro-img img {
     margin: 0;
     order: 1;
-    margin-top: -2rem;
+    margin-top: -5rem;
     max-width: 100%;
     background-image: url(./images/bg-intro-mobile.svg);
     background-repeat: no-repeat;
@@ -263,7 +268,7 @@ section#about .boxes .box img {
   max-width: 100%;
 }
 section#about .boxes .box p {
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 @media (min-width: 360px) and (max-width: 768px) {
   section#about .boxes .box p {
@@ -400,6 +405,57 @@ footer .footer-contents .content-4 .copyright {
   footer .footer-contents .content-4 .copyright {
     margin-top: 1rem;
   }
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  height: 30vh;
+  width: 100%;
+  z-index: 3;
+}
+@media (min-width: 360px) and (max-width: 768px) {
+  .modal.active {
+    display: block;
+  }
+}
+.modal .modal-body {
+  position: relative;
+  background-color: hsl(0deg, 0%, 100%);
+  padding: 2rem;
+  border-radius: 5px;
+  -webkit-animation: modalopen 1s;
+          animation: modalopen 1s;
+}
+@-webkit-keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.modal .modal-body ul {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+.modal .modal-body ul li {
+  padding: 0.5rem 0;
+}
+.modal .modal-body ul li a {
+  color: hsl(233deg, 26%, 24%);
 }
 
 .attribution {

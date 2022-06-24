@@ -155,7 +155,7 @@ header {
       width: 30px;
       height: 30px;
       background-image: url(./images/icon-hamburger.svg);
-      background-repeat: none;
+      background-repeat: no-repeat;
       background-position: center;
       background-repeat: no-repeat;
       background-size: 30px;
@@ -165,13 +165,17 @@ header {
       @include mobile {
         display: block;
       }
-    }
 
-    .toggle.active {
-      background: url(./images/icon-close.svg);
-      background-repeat: no-repeat;
-      background-size: 30px;
-      background-position: center;
+      &.active {
+        background: url(./images/icon-close.svg);
+        background-repeat: no-repeat;
+        background-size: 30px;
+        background-position: center;
+
+        @include mobile {
+          display: block;
+        }
+      }
     }
   }
 }
@@ -236,7 +240,7 @@ section#home {
         @include mobile {
           margin: 0;
           order: 1;
-          margin-top: -2rem;
+          margin-top: -5rem;
           max-width: 100%;
           background-image: url(./images/bg-intro-mobile.svg);
           background-repeat: no-repeat;
@@ -294,7 +298,7 @@ section#about {
       }
 
       p {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
 
         @include mobile {
           text-align: center;
@@ -445,6 +449,55 @@ footer {
 
         @include mobile {
           margin-top: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 4rem;
+  height: 30vh;
+  width: 100%;
+  z-index: 3;
+
+  @include mobile {
+    &.active {
+      display: block;
+    }
+  }
+
+  .modal-body {
+    position: relative;
+    background-color: $white;
+    padding: 2rem;
+    border-radius: 5px;
+    animation: modalopen 1s;
+
+    @keyframes modalopen {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+
+      li {
+        padding: 0.5rem 0;
+
+        a {
+          color: $dark-blue;
         }
       }
     }
