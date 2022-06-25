@@ -23,3 +23,13 @@ function outsideClick(e) {
     closeModal();
   }
 }
+
+const showModal = function (e) {
+  modal.classList.toggle("active");
+
+  if (modal.classList.contains("active")) {
+    body.style.overflow = "hidden";
+  } else {
+    body.style.overflow = "auto";
+  }
+};
