@@ -384,18 +384,17 @@ footer .footer-contents .content-1 .logo {
 footer .footer-contents .content-1 .socials {
   letter-spacing: 7px;
 }
+footer .footer-contents .content-1 .socials svg path {
+  fill: hsl(136deg, 65%, 51%);
+}
+footer .footer-contents .content-1 .socials svg path:hover {
+  fill: hsl(136deg, 65%, 51%);
+  cursor: pointer;
+}
 @media (min-width: 360px) and (max-width: 768px) {
   footer .footer-contents .content-1 .socials {
     padding-bottom: 1rem;
   }
-}
-footer .footer-contents .content-1 .socials img {
-  background: none;
-  cursor: pointer;
-}
-footer .footer-contents .content-1 .socials img:hover {
-  opacity: 0.5;
-  filter: alpha(opacity=50);
 }
 @media (min-width: 360px) and (max-width: 768px) {
   footer .footer-contents .content-3 {

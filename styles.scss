@@ -424,18 +424,16 @@ footer {
       .socials {
         letter-spacing: 7px;
 
-        @include mobile {
-          padding-bottom: 1rem;
-        }
-
-        img {
-          background: none;
-          cursor: pointer;
+        svg path {
+          fill: $lime-green;
 
           &:hover {
-            opacity: 0.5;
-            filter: alpha(opacity=50);
+            fill: $lime-green;
+            cursor: pointer;
           }
+        }
+        @include mobile {
+          padding-bottom: 1rem;
         }
       }
     }
